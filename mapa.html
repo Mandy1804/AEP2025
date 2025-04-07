@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa | SmartDescarte</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #map { height: 400px; width: 100%; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Locais de Descarte</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="agendamento.html">Agendar</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="info.html">Informações</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <div id="map"></div>
+  </main>
+  <script>
+    function initMap() {
+      const centro = { lat: -23.5505, lng: -46.6333 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: centro,
+      });
+      new google.maps.Marker({ position: centro, map: map });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_AQUI&callback=initMap" async defer></script>
+</body>
+</html>
